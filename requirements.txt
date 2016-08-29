@@ -1,3 +1,4 @@
-aflask>=0
+flask>=0
+flask_sqlalchemy>=0
 mysql-python>=0
 mysql-connector>=0

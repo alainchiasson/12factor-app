@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 import mysql.connector as db
 import json
 
@@ -13,28 +14,27 @@ DATABASE_CREDENTIALS = {
 
 app = Flask(__name__)
 
-def execute(query):
-   con = None
-   try:
-       con = db.connect(**DATABASE_CREDENTIALS)
-#      con = db.connect(host='localhost', user='root', password='', database='12factor')
-       cur = con.cursor()
-       cur.execute(query)
-       return cur.fetchall()
-   except db.Error, e:
-       print "Error %d: %s" % (e.args[0], e.args[1])
-       return None
-   finally:
-       if con:
-           con.close()
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+db = SQLAlchemy(app)
 
-def list_users():
-   users = execute("SELECT id, username, email FROM users") or []
-   return [{"id": user_id, "username": username, "email": email} for (user_id, username, email) in users]
+class User(db.Model):
+   __tablename__ = 'users'
+   id = db.Column(db.Integer, primary_key=True)
+   username = db.Column(db.String(80), unique=True)
+   email = db.Column(db.String(120), unique=True)
+
+   def __init__(self, username, email):
+       self.username = username
+       self.email = email
+
+   def __repr__(self):
+       return '<User %r>' % self.username
+
 
 @app.route("/users")
 def users_index():
-   return json.dumps(list_users())
+   to_json = lambda user: {"id": user.id, "name": user.username, "email": user.email}
+   return json.dumps([to_json(user) for user in User.query.all()])
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000, debug=True)
