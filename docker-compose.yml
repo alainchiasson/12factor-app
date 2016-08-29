@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mysql:
+    environment:
+      - MYSQL_ROOT_PASSWORD
+    image: mysql
+  web:
+    ports:
+      - 5000:5000
+    environment:
+      - DATABASE_HOST
+      - DATABASE_USER
+      - DATABASE_PASSWORD
+      - DATABASE_NAME
+      - DATABASE_URL
+    image: alainchiasson/12factor
+    links:
+      - mysql
