@@ -1,4 +1,5 @@
-DROP DATABASE 12factor;
+-- Loads an inital set of data into a test database.
+DROP DATABASE IF EXISTS 12factor;
 CREATE DATABASE 12factor;
 USE 12factor;
 CREATE TABLE users (
