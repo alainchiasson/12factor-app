@@ -36,5 +36,9 @@ def users_index():
    to_json = lambda user: {"id": user.id, "name": user.username, "email": user.email}
    return json.dumps([to_json(user) for user in User.query.all()])
 
+@app.route("/env")
+def print_env():
+    return os.environ['HOME']
+
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=5000, debug=True)
