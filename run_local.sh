@@ -57,7 +57,7 @@ else
 fi
 
 # Drop and setup inital database
-if $( cat initial_sql/dbsetup.sql | mysql -u $DATABASE_USER -p$DATABASE_PASSWORD )
+if $( bash ./load-db.sh )
 then
   echo "Loaded inital database"
 else

@@ -11,18 +11,37 @@ Code:
 The code for the application is a simple flask application that talks to a database.
 
 Running Local:
---------------
+==============
 
 The application can run locally as a python app, connecting to a mysql database. In
 this case the proper  python environment must be installed along with a local
 database. That database must be loaded with initial data provided in the
 `load-db.sh` script, and the `initial_sql/dbsetup.sql` script.
 
+
+Running in docker
+=================
+(needs to be done)
+build image, start db, load-db, start app.
+
+Running in docker-compose
+=========================
+
+Running in Kubernetes
+=====================
+
+
+
+
+With docker compose, we can
+
 Building the docker image:
 --------------------------
 
 We can build the docker image by runnin gthe `build-image.sh` script. This will
 build the `alainchiasson\12factor` application.
+
+
 
 Building for testing:
 ---------------------

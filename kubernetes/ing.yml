@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: 12factor
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /users
+        backend:
+          serviceName: app
+          servicePort: 80

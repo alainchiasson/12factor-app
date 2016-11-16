@@ -1,12 +1,24 @@
 version: '2'
 services:
+  dbinit:
+    environment:
+      - DATABASE_HOST
+      - DATABASE_USER
+      - DATABASE_PASSWORD
+      - DATABASE_NAME
+      - DATABASE_URL
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+    image: alainchiasson/12factor-dbinit
+    links:
+      - mysql
   mysql:
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_DATABASE
     image: mysql
-    volumes:
-     - ./initial_sql:/docker-entrypoint-initdb.d
+    # volumes:
+    #  - ./initial_sql:/docker-entrypoint-initdb.d
   web:
     ports:
       - 5000:5000

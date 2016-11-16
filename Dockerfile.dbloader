@@ -1,0 +1,6 @@
+FROM mysql:latest
+MAINTAINER alainchiasson
+
+COPY . .
+
+ENTRYPOINT [ "bash", "load-db.sh"]
