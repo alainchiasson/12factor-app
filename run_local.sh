@@ -5,6 +5,8 @@
 
 # Are the expected env variables set ?
 
+
+
 # Is python installed ?
 
 if which python > /dev/null 2>&1;
@@ -63,7 +65,6 @@ else
   exit 1
 fi
 
-
-
 # Run the application
+
 python app.py
