@@ -12,8 +12,8 @@ spec:
   selector:
     provider: mysql
 ---
-apiVersion: v1
-kind: ReplicationController
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   name: mysql
   labels:
