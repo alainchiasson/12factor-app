@@ -16,12 +16,16 @@ query selects all users, which are printed out as a JSON block.
 
 
 #VSLIDE
+
+Core code
+---------
 ``` python
 @app.route("/users")
 def users_index():
    to_json = lambda user...
    return json.dumps([to_json(user) for user ...)
 ```
+
 
 #HSLIDE
 [12 factors apps](https://12factor.net)
