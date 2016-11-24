@@ -41,9 +41,11 @@ The config should be seperate from the code
 [Backing services](https://12factor.net/backing-services)
 ===============================================
 
-The code for a twelve-factor app makes no distinction between local and third party services
+app makes no distinction between local and third party services. Loose coupling
 
 accessed via a URL or other locator/credentials stored in the config
+
+Example a MySQL database is a resource; two MySQL databases are two distinct resources.
 
 ```
 mysql://auth@host/db
