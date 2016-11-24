@@ -1,15 +1,26 @@
 #HSLIDE
-The app : Flask + DB
+Migrating to Kubernetes
+=======================
 
-Give a short description on the flask app - show the v1 code.
+A demonstration of taking a simple application and migrating it to Kubernetes
+
+#HSLIDE
+The app : Flask + DB
+====================
+
+This application is a simple flask application. When `/users` is called, a DB
+query selects all users, which are printed out as a JSON block.
 
 #VSLIDE
-```python
+
+
+
+#VSLIDE
+``` python
 @app.route("/users")
 def users_index():
-   to_json = lambda user: {"id": user.id, "name": user.username, "email": user.email}
-   return json.dumps([to_json(user) for user in User.query.all()])
-
+   to_json = lambda user...
+   return json.dumps([to_json(user) for user ...)
 ```
 
 #HSLIDE
