@@ -1,6 +1,15 @@
 #HSLIDE
 The app : Flask + DB
-GIve a short description on the flask app - show the v1 code.
+Give a short description on the flask app - show the v1 code.
+
+#VSLIDE
+```
+@app.route("/users")
+def users_index():
+   to_json = lambda user: {"id": user.id, "name": user.username, "email": user.email}
+   return json.dumps([to_json(user) for user in User.query.all()])
+
+```
 
 #HSLIDE
 Heroku 12 factors apps
