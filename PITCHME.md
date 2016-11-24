@@ -13,10 +13,6 @@ query selects all users, which are printed out as a JSON block.
 
 #VSLIDE
 
-
-
-#VSLIDE
-
 Core code
 ---------
 ``` python
@@ -34,7 +30,6 @@ and Beyond
 
 Principles pushed by Heroku for cloud native applications
 
-
 #VSLIDE
 
 [Config](https://12factor.net/config)
@@ -45,6 +40,16 @@ The config should be seperate from the code
 
 [Backing services](https://12factor.net/backing-services)
 ===============================================
+
+The code for a twelve-factor app makes no distinction between local and third party services
+
+accessed via a URL or other locator/credentials stored in the config
+
+```
+mysql://auth@host/db
+```
+
+
 #VSLIDE
 
 [Build, release, run](https://12factor.net/build-release-run)
