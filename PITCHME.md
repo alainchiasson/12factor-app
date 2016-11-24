@@ -24,6 +24,13 @@ important ones
 |[Logs](https://12factor.net/logs)|API First|
 |Telemetry (measure everything)|authenticate and authorise|
 
+#VSLIDE
+
+Config
+======
+
+The config should be seperate from the code
+
 #HSLIDE
 Running Local on the laptop
 Demonstrate what is required :
