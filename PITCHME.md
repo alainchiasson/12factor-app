@@ -56,6 +56,19 @@ mysql://auth@host/db
 
 [Build, release, run](https://12factor.net/build-release-run)
 =====================================
+
+strict separation between the build, release, and run stages
+
+it is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.
+
+Every release should always have a unique release ID
+
+#VSLIDE
+[Build, release, run](https://12factor.net/build-release-run)
+=====================================
+
+![Release](https://12factor.net/images/release.png)
+
 #VSLIDE
 
 [Processes - share nothing](https://12factor.net/processes)
