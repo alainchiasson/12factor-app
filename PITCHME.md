@@ -44,7 +44,7 @@ The config should be seperate from the code
 =====================================
 #VSLIDE
 
-[Disposability](https://12factor.net/disposability)|
+[Disposability](https://12factor.net/disposability)
 =====================================
 #VSLIDE
 
@@ -63,12 +63,6 @@ measure everything
 authenticate and authorize
 =====================================
 
-#VSLIDE
-
-[Config](https://12factor.net/config)
-=====================================
-
-The config should be seperate from the code
 
 #HSLIDE
 Running Local on the laptop
