@@ -13,16 +13,55 @@ def users_index():
 ```
 
 #HSLIDE
-[12 factors apps](https://12factor.net) and Beyond
-==================================================
+[12 factors apps](https://12factor.net)
+=======================================
+and Beyond
 
 Principles pushed by Heroku for cloud native applications
 
 
-[Config](https://12factor.net/config) * [Backing services](https://12factor.net/backing-services) *
-[Build, release, run](https://12factor.net/build-release-run) * [Processes - share nothing](https://12factor.net/processes) * [Concurrency](https://12factor.net/concurrency) * [Disposability](https://12factor.net/disposability)|
-* [Logs](https://12factor.net/logs) * API First *
-* measure everything * authenticate and authorize
+#VSLIDE
+
+[Config](https://12factor.net/config)
+=====================================
+
+The config should be seperate from the code
+#VSLIDE
+
+[Backing services](https://12factor.net/backing-services)
+===============================================
+#VSLIDE
+
+[Build, release, run](https://12factor.net/build-release-run)
+=====================================
+#VSLIDE
+
+[Processes - share nothing](https://12factor.net/processes)
+=====================================
+#VSLIDE
+
+[Concurrency](https://12factor.net/concurrency)
+=====================================
+#VSLIDE
+
+[Disposability](https://12factor.net/disposability)|
+=====================================
+#VSLIDE
+
+[Logs](https://12factor.net/logs)
+=====================================
+#VSLIDE
+
+API First
+=====================================
+#VSLIDE
+
+measure everything
+=====================================
+#VSLIDE
+
+authenticate and authorize
+=====================================
 
 #VSLIDE
 
