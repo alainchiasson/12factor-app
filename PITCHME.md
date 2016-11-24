@@ -26,8 +26,8 @@ important ones
 
 #VSLIDE
 
-Config
-======
+Config(https://12factor.net/config)
+===================================
 
 The config should be seperate from the code
 
