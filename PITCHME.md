@@ -61,16 +61,16 @@ strict separation between the build, release, and run stages
 
 ![Release](https://12factor.net/images/release.png)
 
-it is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.
 
 #VSLIDE
 [Build, release, run](https://12factor.net/build-release-run)
 =====================================
 
+it is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.
 
 Every release should always have a unique release ID
 
-Releases are an append-only ledger any change must create a new release.
+Releases are an append-only ledger and any change must create a new release.
 
 
 #VSLIDE
