@@ -18,16 +18,11 @@ Heroku 12 factors apps for cloud native
 important ones
 
 ------------|----------
-[Config](https://12factor.net/config)|
-[Backing services](https://12factor.net/backing-services)
-[Build, release, run](https://12factor.net/build-release-run)|
-[Processes - share nothing](https://12factor.net/processes)
-[Concurrency](https://12factor.net/concurrency)|
-[Disposability](https://12factor.net/disposability)
-[Logs](https://12factor.net/logs)|
-API First
-Telemetry (measure everything)|
-authenticate and authorise
+[Config](https://12factor.net/config)|[Backing services](https://12factor.net/backing-services)
+[Build, release, run](https://12factor.net/build-release-run)|[Processes - share nothing](https://12factor.net/processes)
+[Concurrency](https://12factor.net/concurrency)|[Disposability](https://12factor.net/disposability)
+[Logs](https://12factor.net/logs)|API First
+Telemetry (measure everything)|authenticate and authorise
 
 #HSLIDE
 Running Local on the laptop
