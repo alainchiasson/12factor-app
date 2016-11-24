@@ -1,5 +1,6 @@
 #HSLIDE
 The app : Flask + DB
+
 Give a short description on the flask app - show the v1 code.
 
 #VSLIDE
@@ -12,18 +13,20 @@ def users_index():
 ```
 
 #HSLIDE
-Heroku 12 factors apps
-Focus on the important ones
-Config ( https://12factor.net/config )
-Backing services ( https://12factor.net/backing-services )
-Build, release, run ( https://12factor.net/build-release-run )
-Processes - share nothing ( https://12factor.net/processes )
-Concurrency ( https://12factor.net/concurrency )
-Disposability ( https://12factor.net/disposability )
-Logs ( https://12factor.net/logs )
-API First
-Telemetry ( measure everything )
-AAA ( authenticate and authorise )
+Heroku 12 factors apps for cloud native
+
+important ones
+
+- Config https://12factor.net/config
+- Backing services ( https://12factor.net/backing-services )
+- Build, release, run ( https://12factor.net/build-release-run )
+- Processes - share nothing ( https://12factor.net/processes )
+- Concurrency ( https://12factor.net/concurrency )
+- Disposability ( https://12factor.net/disposability )
+- Logs ( https://12factor.net/logs )
+- API First
+- Telemetry ( measure everything )
+- AAA ( authenticate and authorise )
 
 #HSLIDE
 Running Local on the laptop
