@@ -6,6 +6,9 @@
 
 . kubernetes.env
 
+# Push the ConfigMap
+kubectl create -f kubernetes/envs.yml
+
 # Deploy substituting the environment variables. simple substitution.
 
 perl -p -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg' kubernetes/db.yml | kubectl create -f -
