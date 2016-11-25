@@ -7,6 +7,7 @@ data:
   database.user: root
   database.password: mytest
   database.name: 12factor
+#  database.url: "mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/${DATABASE_NAME}"
 
 
 # export DATABASE_HOST=mysql
