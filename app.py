@@ -14,6 +14,8 @@ DATABASE_CREDENTIALS = {
 
 app = Flask(__name__)
 
+os.environ['DATABASE_URL'] = "mysql://%s:%s@%s/%s" % (DATABASE_CREDENTIALS['user'], DATABASE_CREDENTIALS['password'], DATABASE_CREDENTIALS['host'], DATABASE_CREDENTIALS['database'])
+
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
