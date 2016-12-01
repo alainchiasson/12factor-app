@@ -23,6 +23,16 @@ def users_index():
 ```
 
 
+#VSLIDE
+
+Database
+--------
+``` SQL
+INSERT INTO users VALUES (1, "admin", "admin@example.com");
+INSERT INTO users VALUES (2, "guest", "guest@example.com");
+```
+
+
 #HSLIDE
 [12 factors apps](https://12factor.net)
 =======================================

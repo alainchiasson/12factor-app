@@ -38,6 +38,10 @@ def users_index():
    to_json = lambda user: {"id": user.id, "name": user.username, "email": user.email}
    return json.dumps([to_json(user) for user in User.query.all()])
 
+@app.route("/version")
+def print_env():
+    return "v2"
+
 @app.route("/env")
 def print_env():
     return os.environ['HOME']

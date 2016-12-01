@@ -5,7 +5,7 @@ metadata:
   name: dbinit
   labels:
     provider: dbinit
-    heritage: none
+    environ: dev
 spec:
   restartPolicy: Never
   containers:
