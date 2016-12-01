@@ -22,7 +22,6 @@ def users_index():
    return json.dumps([to_json(user) for user ...)
 ```
 
-
 #VSLIDE
 
 Database
