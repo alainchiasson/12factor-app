@@ -39,7 +39,7 @@ def users_index():
    return json.dumps([to_json(user) for user in User.query.all()])
 
 @app.route("/version")
-def print_env():
+def print_ver():
     return "v2"
 
 @app.route("/env")
