@@ -10,3 +10,7 @@ spec:
         backend:
           serviceName: app
           servicePort: 80
+      - path: /version
+        backend:
+          serviceName: app
+          servicePort: 80
