@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Kubernetes</title>
+    <title>Intro to Kubernetes at Guavus</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1286,13 +1286,6 @@ aside {
     
     
     
-      <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
-        });
-      </script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     <!-- /Javascripts -->
 </head>
 <body>
@@ -1303,9 +1296,708 @@ aside {
     </div>
     <div class="slides">
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
         <div class="slide slide-1">
+          <div class="inner">
+            
+            <header><h1>Intro to Kubernetes at Guavus</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-2">
+          <div class="inner">
+            
+            <header><h1>Caveats</h1></header>
+            
+            
+            <section><ul>
+<li>This is still a work in progress</li>
+<li>Some things will change</li>
+</ul>
+<p>We are Ok with that</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-3">
+          <div class="inner">
+            
+            <header><h1>Outline</h1></header>
+            
+            
+            <section><ul>
+<li>Industry trends and new Tech</li>
+<li>12 factor apps and Beyond - Cloud Native</li>
+<li>Dockers and Kubernetes</li>
+<li>Walk through</li>
+<li>Application to migrate</li>
+<li>Moving to Docker</li>
+<li>Moving to Kubernetes</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-4">
+          <div class="inner">
+            
+            <header><h1>Industry Trends</h1></header>
+            
+            
+            <section><ul>
+<li>Agile / Velocity vs Waterfall/ Big Up Front Design</li>
+<li>CI / CD pipelines vs "upgrades"</li>
+<li>Micro-services vs SOA / Monolith</li>
+<li>Vertical teams vs Horizontal teams</li>
+<li>DevOps vs Departments</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h1>Tech helping out</h1></header>
+            
+            
+            <section><ul>
+<li>API's all the way down</li>
+<li>Unreliable but available</li>
+<li>Cattle vs Pets</li>
+<li>Auto-healing vs Trouble shooting</li>
+<li>Virtualization, containers</li>
+<li>Cloud and GIFEE</li>
+<li>12 factors and beyond</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h1><a href="https://12factor.net">12 factors apps</a></h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-7">
+          <div class="inner">
+            
+            <header><h1>12 factor applications</h1></header>
+            
+            
+            <section><p>Principles pushed by Heroku for cloud native applications</p>
+<ol>
+<li>Codebase :One codebase tracked in revision control, many deploys</li>
+<li>Dependencies :Explicitly declare and isolate dependencies</li>
+<li>Config :Store config in the environment</li>
+<li>Backing services :Treat backing services as attached resources</li>
+<li>Build, release, run :Strictly separate build and run stages</li>
+<li>Processes :Execute the app as one or more stateless processes</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-8">
+          <div class="inner">
+            
+            <header><h1>12 factor applications</h1></header>
+            
+            
+            <section><ol>
+<li>Port binding :Export services via port binding</li>
+<li>Concurrency :Scale out via the process model</li>
+<li>Disposability :Maximize robustness with fast startup and graceful shutdown</li>
+<li>Dev/prod parity :Keep development, staging, and production as similar as possible</li>
+<li>Logs :Treat logs as event streams</li>
+<li>Admin processes :Run admin/management tasks as one-off processes</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-9">
+          <div class="inner">
+            
+            <header><h1>Highlights</h1></header>
+            
+            
+            <section><h1><a href="https://12factor.net/config">Config</a></h1>
+<p>The config should be seperate from the code</p>
+<h1><a href="https://12factor.net/backing-services">Backing services</a></h1>
+<p>app makes no distinction between local and third party services. Loose coupling</p>
+<p>accessed via a URL or other locator/credentials stored in the config</p>
+<p>Example a MySQL database is a resource; two MySQL databases are two distinct resources.</p>
+<p><code>mysql://auth@host/db</code></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-10">
+          <div class="inner">
+            
+            <header><h1>Highlights</h1></header>
+            
+            
+            <section><h1><a href="https://12factor.net/build-release-run">Build, release, run</a></h1>
+<p>strict separation between the build, release, and run stages</p>
+<p><img alt="Release" src="https://12factor.net/images/release.png" /></p>
+<p>It is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.</p>
+<p>Every release should always have a unique release ID</p>
+<p>Releases are an append-only ledger and any change must create a new release.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-11">
+          <div class="inner">
+            
+            <header><h1>Highlights</h1></header>
+            
+            
+            <section><h1><a href="https://12factor.net/processes">Processes - share nothing</a></h1>
+<p>Any data that needs to persist must be stored in a stateful backing service, typically a database. No Sticky sessions.</p>
+<h1><a href="https://12factor.net/concurrency">Concurrency</a></h1>
+<p>Scale out via the process model.</p>
+<h1><a href="https://12factor.net/disposability">Disposability</a></h1>
+<p>Maximize robustness with fast startup and graceful shutdown.</p>
+<h1><a href="https://12factor.net/logs">Logs</a></h1>
+<p>Logs should be treated as event streams, that is, logs are a sequence
+of events emitted from an application in time-ordered sequence</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-12">
+          <div class="inner">
+            
+            <header><h1>Beyond 12 factors</h1></header>
+            
+            
+            <section><p>New things in building Cloud Native</p>
+<h1>API First</h1>
+<p>designing your API first, you are able to facilitate discussion with your stakeholders</p>
+<h1>Measure everything</h1>
+<p>Think of pushing applications to the cloud as launching a scientific instrument into space. You need to know what is going on at a distance.</p>
+<h1>Authenticate and authorize</h1>
+<p>Security should never be an afterthought.</p>
+<p><a href="https://www.cdta.org/sites/default/files/awards/beyond_the_12-factor_app_pivotal.pdf">Reference - Beyond the 12 factors </a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-13">
+          <div class="inner">
+            
+            <header><h1>Dockers and Kubernetes</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-14">
+          <div class="inner">
+            
+            <header><h1>Docker and containers</h1></header>
+            
+            
+            <section><ul>
+<li>isolated process</li>
+<li>includes resources</li>
+<li>lighter than virtualization</li>
+<li>Black Box with operational controls</li>
+<li>API bassed</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-15">
+          <div class="inner">
+            
+            <header><h1>Kubernetes and infrastructure</h1></header>
+            
+            
+            <section><ul>
+<li>Manages and organizes containers</li>
+<li>Opinionated</li>
+<li>Watches and manages them</li>
+<li>Across machines and infrastructure</li>
+<li>API driven</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-16">
+          <div class="inner">
+            
+            <header><h1>Application</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-17">
+          <div class="inner">
+            
+            <header><h1>Migration from app to Kubernetes</h1></header>
+            
+            
+            <section><ul>
+<li>VERY simple Flask app</li>
+<li>Mysql Backed database</li>
+<li>run_local</li>
+</ul>
+<p>Standalone Deployment</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <ol>
+<li>Present application (app.py/requirements.txt)</li>
+<li>Present database (dbsetup.sql)</li>
+<li>Present how to scale up</li>
+</ol>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-18">
+          <div class="inner">
+            
+            <header><h1>Migration from app to Kubernetes</h1></header>
+            
+            
+            <section><ol>
+<li>Everything to a container</li>
+<li>Seperate containers for all processes</li>
+<li>Services in kubernetes, managed as deployments</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>Draw on the board. point out issues.</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-19">
+          <div class="inner">
+            
+            <header><h1>Docker</h1></header>
+            
+            
+            <section><ul>
+<li>Dockerfile to build app</li>
+<li>Dockerfile to build dbinit</li>
+<li>Docker hub for Mysql</li>
+<li>run_docker</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+              <p>Talk about Build pipelines.</p>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-20">
+          <div class="inner">
+            
+            <header><h1>Docker compose</h1></header>
+            
+            
+            <section><ul>
+<li>Docker compse file</li>
+<li>run_compse</li>
+<li>compose.env</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-21">
           <div class="inner">
             
             <header><h1>Kubernetes</h1></header>
@@ -1321,30 +2013,30 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              1/14
+              21/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-2">
+        <div class="slide slide-22">
           <div class="inner">
             
-            <header><h1>Pods</h1></header>
+            <header><h1>Kubernetes</h1></header>
             
             
             <section><ul>
-<li>Pods are the smallest deployable units of computing that can be created and
-  managed in Kubernetes.</li>
-<li>They are not limited to one and can contain as many containers as needed</li>
-<li>They share a set of Linux namespaces and do not run isolated from each other.</li>
-<li>They share an IP address and port space, and being able to find each other over localhost.</li>
+<li>Still dealing with containers but in the cloud.</li>
+<li>Pods : Space where containers run</li>
+<li>Service : Interface to Pods</li>
+<li>Deployments : A pod life cycle manager</li>
+<li>ConfigMaps : A place to store configurations</li>
 </ul></section>
             
           </div>
@@ -1357,19 +2049,62 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              2/14
+              22/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-3">
+        <div class="slide slide-23">
+          <div class="inner">
+            
+            <header><h1>Pods</h1></header>
+            
+            
+            <section><p>Pods are the smallest deployable units of computing that can be created and
+managed in Kubernetes. More than one container can exist in a pod.</p>
+<h1>Containers inside pods</h1>
+<ul>
+<li>Share a set of Linux namespaces</li>
+<li>Do not run isolated from each other.</li>
+<li>Can share persistant and non-persistant volumes.</li>
+<li>Share IP address and port space and are able to find each other over localhost.</li>
+</ul>
+<h1>Pods and networking</h1>
+<ul>
+<li>There is no NAT between pods</li>
+<li>Your own IP is what others see</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="presentation.md">presentation.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: presentation.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-24">
           <div class="inner">
             
             <header><h1>Labels and Selectors</h1></header>
@@ -1379,6 +2114,8 @@ aside {
 <li>key/value pairs that can be attached to objects</li>
 <li>used to organize and select subsets of objects</li>
 <li>to identify releases (beta, stable), environments (dev, prod), or tiers (frontend, backend)</li>
+<li>Used to manage "things" - pods, deployments, services, ports</li>
+<li>Used to link "things" together. Service "selects" Pods based on labels.</li>
 </ul></section>
             
           </div>
@@ -1391,19 +2128,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              3/14
+              24/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-4">
+        <div class="slide slide-25">
           <div class="inner">
             
             <header><h1>Quick Recap</h1></header>
@@ -1429,19 +2166,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              4/14
+              25/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-5">
+        <div class="slide slide-26">
           <div class="inner">
             
             <header><h1>Mysql Community image</h1></header>
@@ -1472,19 +2209,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              5/14
+              26/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-6">
+        <div class="slide has_code slide-27">
           <div class="inner">
             
             <header><h1>12factor-dbinit Docker file</h1></header>
@@ -1521,19 +2258,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              6/14
+              27/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-7">
+        <div class="slide has_code slide-28">
           <div class="inner">
             
             <header><h1>12factor Docker file</h1></header>
@@ -1572,19 +2309,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              7/14
+              28/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-8">
+        <div class="slide slide-29">
           <div class="inner">
             
             <header><h1>In Kubernetes</h1></header>
@@ -1611,19 +2348,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              8/14
+              29/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-9">
+        <div class="slide has_code slide-30">
           <div class="inner">
             
             <header><h1>ConfigMaps</h1></header>
@@ -1654,19 +2391,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              9/14
+              30/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-10">
+        <div class="slide has_code slide-31">
           <div class="inner">
             
             <header><h1>Define : Mysql Service</h1></header>
@@ -1703,19 +2440,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              10/14
+              31/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-11">
+        <div class="slide has_code slide-32">
           <div class="inner">
             
             <header><h1>Define : Mysql Deployment</h1></header>
@@ -1745,19 +2482,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              11/14
+              32/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-12">
+        <div class="slide has_code slide-33">
           <div class="inner">
             
             <header><h1>Define : Mysql Deployment - 2</h1></header>
@@ -1786,19 +2523,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              12/14
+              33/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-13">
+        <div class="slide has_code slide-34">
           <div class="inner">
             
             <header><h1>Define : Mysql Deployment - 3</h1></header>
@@ -1834,19 +2571,19 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              13/14
+              34/35
             </aside>
           </footer>
         </div>
       </div>
       
-      <!-- slide source: kube.md -->
+      <!-- slide source: presentation.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-14">
+        <div class="slide has_code slide-35">
           <div class="inner">
             
             <header><h1>ConfigMap - Container links</h1></header>
@@ -1883,11 +2620,11 @@ aside {
           <footer>
             
             <aside class="source">
-              Source: <a href="kube.md">kube.md</a>
+              Source: <a href="presentation.md">presentation.md</a>
             </aside>
             
             <aside class="page_number">
-              14/14
+              35/35
             </aside>
           </footer>
         </div>
@@ -1909,7 +2646,7 @@ aside {
           <footer>
             
             <aside class="page_number">
-              /14
+              /35
             </aside>
           </footer>
         </div>
@@ -1924,86 +2661,212 @@ aside {
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Kubernetes</a></th>
+        <th><a href="#slide1">Intro to Kubernetes at Guavus</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Pods</a></th>
+        <th><a href="#slide2">Caveats</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Labels and Selectors</a></th>
+        <th><a href="#slide3">Outline</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Quick Recap</a></th>
+        <th><a href="#slide4">Industry Trends</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Mysql Community image</a></th>
+        <th><a href="#slide5">Tech helping out</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">12factor-dbinit Docker file</a></th>
+        <th><a href="#slide6"><a href="https://12factor.net">12 factors apps</a></a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">12factor Docker file</a></th>
+        <th><a href="#slide7">12 factor applications</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">In Kubernetes</a></th>
+        <th><a href="#slide8">12 factor applications</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">ConfigMaps</a></th>
+        <th><a href="#slide9">Highlights</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Define : Mysql Service</a></th>
+        <th><a href="#slide10">Highlights</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Define : Mysql Deployment</a></th>
+        <th><a href="#slide11">Highlights</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Define : Mysql Deployment - 2</a></th>
+        <th><a href="#slide12">Beyond 12 factors</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Define : Mysql Deployment - 3</a></th>
+        <th><a href="#slide13">Dockers and Kubernetes</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">ConfigMap - Container links</a></th>
+        <th><a href="#slide14">Docker and containers</a></th>
         <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Kubernetes and infrastructure</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Application</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Migration from app to Kubernetes</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Migration from app to Kubernetes</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Docker</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Docker compose</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Kubernetes</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Kubernetes</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Pods</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Labels and Selectors</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Quick Recap</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Mysql Community image</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">12factor-dbinit Docker file</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">12factor Docker file</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">In Kubernetes</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">ConfigMaps</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Define : Mysql Service</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Define : Mysql Deployment</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Define : Mysql Deployment - 2</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">Define : Mysql Deployment - 3</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">ConfigMap - Container links</a></th>
+        <td><a href="#slide35">35</a></td>
       </tr>
       
       
