@@ -27,10 +27,24 @@ build image, start db, load-db, start app.
 Running in docker-compose
 =========================
 
+To run using docker compose, just run:
+
+`./run_compose.sh`
+
+and this will start the proper infrastructure and load up the containers from
+Docker hub to run.
+
 Running in Kubernetes
 =====================
 
+To run in Kubernetes, we assume that you have already setup your kubectl config file
+and can reach the cluster. The command :
 
+`./kub_deploy.sh`
+
+Will push the 2 deployments to the cluster, one for the web server, and one for the
+database. The database is composed of 2 containers - the Mysql one, and one to load
+initial data. This is also a quick demonstration of a 2 container pod usecase.
 
 
 With docker compose, we can
