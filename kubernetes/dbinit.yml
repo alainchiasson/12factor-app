@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dbinit
+  labels:
+    provider: dbinit
+    heritage: none
+spec:
+  restartPolicy: Never
+  containers:
+  - name: 12factor-dbinit
+    image: alainchiasson/12factor-dbinit
+    env:
+    - name: DATABASE_HOST
+      valueFrom:
+        configMapKeyRef:
+          name: db-config
+          key: database.host
+    - name: DATABASE_USER
+      valueFrom:
+        configMapKeyRef:
+          name: db-config
+          key: database.user
+    - name: DATABASE_PASSWORD
+      valueFrom:
+        configMapKeyRef:
+          name: db-config
+          key: database.password
+    - name: DATABASE_NAME
+      valueFrom:
+        configMapKeyRef:
+          name: db-config
+          key: database.name
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+        configMapKeyRef:
+          name: db-config
+          key: database.password
+    - name: MYSQL_DATABASE
+      valueFrom:
+        configMapKeyRef:
+          name: db-config
+          key: database.name

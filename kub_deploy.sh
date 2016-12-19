@@ -17,6 +17,6 @@ kubectl create -f kubernetes/envs.yml
 # perl -p -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg' kubernetes/ing.yml | kubectl create -f -
 
 kubectl create -f kubernetes/db.yml
-# kubectl create -f kubernetes/dbinit.yml
+kubectl create -f kubernetes/dbinit.yml
 kubectl create -f kubernetes/app.yml
 kubectl create -f kubernetes/ing.yml
