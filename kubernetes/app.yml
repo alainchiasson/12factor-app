@@ -1,17 +1,17 @@
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: app
-  labels:
-    provider: app
-    environ: prod
-spec:
-  ports:
-  - port: 80
-    targetPort: 5000
-  selector:
-    provider: app
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: app
+#   labels:
+#     provider: app
+#     environ: prod
+# spec:
+#   ports:
+#   - port: 80
+#     # targetPort: 5000
+#   selector:
+#     provider: app
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -27,7 +27,21 @@ spec:
       labels:
         provider: app
     spec:
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+          items:
+          - key: config
+            path: nginx.conf
       containers:
+      - name: nginx-proxy
+        image:  nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /etc/nginx/
+          name: nginx-config
       - name: 12factor
         image: alainchiasson/12factor
         env:
