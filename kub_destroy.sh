@@ -1,5 +1,5 @@
 #!/bin/bash
-# kubectl delete pod dbinit
+kubectl delete pod dbinit
 
 kubectl delete svc mysql
 # kubectl delete rc mysql
@@ -12,3 +12,5 @@ kubectl delete deployment app
 kubectl delete ing 12factor
 
 kubectl delete configmap db-config
+
+kubectl delete configmap nginx-config
