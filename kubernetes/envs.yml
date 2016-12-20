@@ -12,24 +12,17 @@ metadata:
 apiVersion: v1
 data:
   config: |
-    worker_processes  1;
     error_log /dev/stdout info;
     events {
         worker_connections 1024;
     }
 
     http {
-
-      upstream rails_app {
-        server 127.0.0.1:5000;
-      }
-
       server {
         listen *:80;
-        root /path/to/application/public;
 
-        location / {
-          proxy_pass http://localhost:5000;
+        location /users {
+          proxy_pass http://localhost:5000/version;
         }
       }
     }
