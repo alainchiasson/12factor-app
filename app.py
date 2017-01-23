@@ -40,7 +40,7 @@ def users_index():
 
 @app.route("/version")
 def print_ver():
-    return "v2"
+    return "5.4"
 
 @app.route("/env")
 def print_env():
