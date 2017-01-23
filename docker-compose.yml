@@ -1,4 +1,6 @@
-version: '2'
+version: '3'
+networks:
+  service-net:
 services:
   dbinit:
     environment:
@@ -10,13 +12,15 @@ services:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_DATABASE
     image: alainchiasson/12factor-dbinit
-    links:
-      - mysql
+    networks:
+      - service-net
   mysql:
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_DATABASE
     image: mysql
+    networks:
+      - service-net
     # volumes:
     #  - ./initial_sql:/docker-entrypoint-initdb.d
   web:
@@ -29,5 +33,5 @@ services:
       - DATABASE_NAME
       - DATABASE_URL
     image: alainchiasson/12factor
-    links:
-      - mysql
+    networks:
+      - service-net
