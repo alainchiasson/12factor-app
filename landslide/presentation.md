@@ -1,4 +1,4 @@
-# Intro to Kubernetes at Guavus
+# Intro to Docker, Kubernetes
 
 ---
 
@@ -13,125 +13,32 @@ We are Ok with that
 
 # Outline
 
-- Industry trends and new Tech
-- 12 factor apps and Beyond - Cloud Native
+- Technology trends
 - Dockers and Kubernetes
 - Walk through
 - Application to migrate
 - Moving to Docker
 - Moving to Kubernetes
 
-
 ---
 
-# Industry Trends
-
-- Agile / Velocity vs Waterfall/ Big Up Front Design
-- CI / CD pipelines vs "upgrades"
-- Micro-services vs SOA / Monolith
-- Vertical teams vs Horizontal teams
-- DevOps vs Departments
-
----
-
-# Tech helping out
-- API's all the way down
-- Unreliable but available
-- Cattle vs Pets
+# Technology trends for Cloud Native
+- API's Native
+- Unreliable, but available infrastructure
+- Infrastructure as Cattle not Pets
 - Auto-healing vs Trouble shooting
-- Virtualization, containers
-- Cloud and GIFEE
-- 12 factors and beyond
+- [12 factors](https://12factor.net) and [ Beyond ](https://www.cdta.org/sites/default/files/awards/beyond_the_12-factor_app_pivotal.pdf)
 
----
+- Serverless ( the next trend )
 
-# [12 factors apps](https://12factor.net)
+# Presenter notes
 
----
-
-# 12 factor applications
-Principles pushed by Heroku for cloud native applications
-
-1. Codebase :One codebase tracked in revision control, many deploys
-2. Dependencies :Explicitly declare and isolate dependencies
-3. Config :Store config in the environment
-4. Backing services :Treat backing services as attached resources
-5. Build, release, run :Strictly separate build and run stages
-6. Processes :Execute the app as one or more stateless processes
-
----
-
-# 12 factor applications
-
-7. Port binding :Export services via port binding
-8. Concurrency :Scale out via the process model
-9. Disposability :Maximize robustness with fast startup and graceful shutdown
-10. Dev/prod parity :Keep development, staging, and production as similar as possible
-11. Logs :Treat logs as event streams
-12. Admin processes :Run admin/management tasks as one-off processes
-
----
-
-# Highlights
-
-# [Config](https://12factor.net/config)
-The config should be seperate from the code
-# [Backing services](https://12factor.net/backing-services)
-app makes no distinction between local and third party services. Loose coupling
-
-accessed via a URL or other locator/credentials stored in the config
-
-Example a MySQL database is a resource; two MySQL databases are two distinct resources.
-
-```
-mysql://auth@host/db
-```
-
----
-
-# Highlights
-
-# [Build, release, run](https://12factor.net/build-release-run)
-
-strict separation between the build, release, and run stages
-
-![Release](https://12factor.net/images/release.png)
-
-It is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.
-
-Every release should always have a unique release ID
-
-Releases are an append-only ledger and any change must create a new release.
-
-----
-
-# Highlights
-
-# [Processes - share nothing](https://12factor.net/processes)
-Any data that needs to persist must be stored in a stateful backing service, typically a database. No Sticky sessions.
-# [Concurrency](https://12factor.net/concurrency)
-Scale out via the process model.
-# [Disposability](https://12factor.net/disposability)
-Maximize robustness with fast startup and graceful shutdown.
-# [Logs](https://12factor.net/logs)
-Logs should be treated as event streams, that is, logs are a sequence
-of events emitted from an application in time-ordered sequence
-
----
-
-# Beyond 12 factors
-
-New things in building Cloud Native
-
-# API First
-designing your API first, you are able to facilitate discussion with your stakeholders
-# Measure everything
-Think of pushing applications to the cloud as launching a scientific instrument into space. You need to know what is going on at a distance.
-# Authenticate and authorize
-Security should never be an afterthought.
-
-
-[Reference - Beyond the 12 factors ](https://www.cdta.org/sites/default/files/awards/beyond_the_12-factor_app_pivotal.pdf)
+By API's Native, we mean that you create the API and develop everything
+else to talk to it.
+Unreliable but available infrastructure - assume any part will go down, but will come back up.
+You are attached to Pets, Cattle can be replaced by any other in the heard.
+Auto healing - Applications have a control plane that can work around issues.
+12 factors and beyond developed by Heroku for a cloud first world.
 
 ---
 
@@ -139,27 +46,29 @@ Security should never be an afterthought.
 
 ---
 
-# Docker and containers
+# Containers and Docker
 
 - isolated process
 - includes resources
 - lighter than virtualization
 - Black Box with operational controls
-- API bassed
+- API based
+- CLI talks to API ( docker )
 
 ---
 
 # Kubernetes and infrastructure
 
 - Manages and organizes containers
-- Opinionated
-- Watches and manages them
+- Opinionated in the way it deploys
+- Watches and manages pods
 - Across machines and infrastructure
-- API driven
+- API based
+- CLI talks to API ( kubectl )
 
 ---
 
-# Application
+# Application to migrate
 
 ---
 
@@ -167,9 +76,38 @@ Security should never be an afterthought.
 
 - VERY simple Flask app
 - Mysql Backed database
-- run_local
 
-Standalone Deployment
+Core code
+
+    !python
+    @app.route("/users")
+    def users_index():
+      to_json = lambda user: {"id": user.id, "name": user.username, "email": user.email}
+      return json.dumps([to_json(user) for user in User.query.all()])
+
+     @app.route("/version")
+     def print_ver():
+         return "5.4"
+
+---
+# Migration from app to Kubernetes
+
+Python dependancies
+
+    !python
+    flask>=0
+    flask_sqlalchemy>=0
+    mysql-python>=0
+    mysql-connector>=0
+
+Run pip install requirements.txt
+
+---
+# Migration from app to Kubernetes
+
+DB Init script
+To initialise the DB
+
 
 # Presenter notes
 
@@ -181,9 +119,9 @@ Standalone Deployment
 
 # Migration from app to Kubernetes
 
-1. Everything to a container
-2. Seperate containers for all processes
-3. Services in kubernetes, managed as deployments
+1. Move Everything to a container
+2. Separate containers for all processes
+3. Create Services in kubernetes, managed as deployments
 
 # Presenter notes
 
@@ -192,6 +130,9 @@ Draw on the board. point out issues.
 ---
 
 # Docker
+
+---
+# Migrate to Docker
 
 - Dockerfile to build app
 - Dockerfile to build dbinit
@@ -202,15 +143,6 @@ Draw on the board. point out issues.
 
 Talk about Build pipelines.
 
----
-
-# Docker compose
-
-- Docker compse file
-- run_compse
-- compose.env
-
-# Presenter notes
 
 ---
 
@@ -220,11 +152,15 @@ Talk about Build pipelines.
 
 # Kubernetes
 
-- Still dealing with containers but in the cloud.
+Still dealing with containers but but at a higher abstraction. New terms:
+
 - Pods : Space where containers run
 - Service : Interface to Pods
 - Deployments : A pod life cycle manager
 - ConfigMaps : A place to store configurations
+
+
+# Presenter notes
 
 ---
 
@@ -234,9 +170,10 @@ Pods are the smallest deployable units of computing that can be created and
 managed in Kubernetes. More than one container can exist in a pod.
 
 # Containers inside pods
-- Share a set of Linux namespaces
-- Do not run isolated from each other.
-- Can share persistant and non-persistant volumes.
+- Like processes on a machine
+- Share a single IP
+- have the same lifecycle.
+- Share persistent and non-persistent volumes.
 - Share IP address and port space and are able to find each other over localhost.
 
 # Pods and networking
@@ -497,3 +434,114 @@ Comes from
       ...
 
 ---
+
+# Extra Material
+
+---
+
+# Industry Trends
+
+- Agile / Velocity vs Waterfall/ Big Up Front Design
+- CI / CD pipelines vs "upgrades"
+- Micro-services vs SOA / Monolith
+- Vertical teams vs Horizontal teams
+- DevOps vs Departments
+---
+
+# [12 factors apps](https://12factor.net)
+
+---
+
+# 12 factor applications
+Principles pushed by Heroku for cloud native applications
+
+1. Codebase :One codebase tracked in revision control, many deploys
+2. Dependencies :Explicitly declare and isolate dependencies
+3. Config :Store config in the environment
+4. Backing services :Treat backing services as attached resources
+5. Build, release, run :Strictly separate build and run stages
+6. Processes :Execute the app as one or more stateless processes
+
+---
+
+# 12 factor applications
+
+7. Port binding :Export services via port binding
+8. Concurrency :Scale out via the process model
+9. Disposability :Maximize robustness with fast startup and graceful shutdown
+10. Dev/prod parity :Keep development, staging, and production as similar as possible
+11. Logs :Treat logs as event streams
+12. Admin processes :Run admin/management tasks as one-off processes
+
+---
+
+# Highlights
+
+# [Config](https://12factor.net/config)
+The config should be seperate from the code
+# [Backing services](https://12factor.net/backing-services)
+app makes no distinction between local and third party services. Loose coupling
+
+accessed via a URL or other locator/credentials stored in the config
+
+Example a MySQL database is a resource; two MySQL databases are two distinct resources.
+
+```
+mysql://auth@host/db
+```
+
+---
+
+# Highlights
+
+# [Build, release, run](https://12factor.net/build-release-run)
+
+strict separation between the build, release, and run stages
+
+![Release](https://12factor.net/images/release.png)
+
+It is impossible to make changes to the code at runtime, since there is no way to propagate those changes back to the build stage.
+
+Every release should always have a unique release ID
+
+Releases are an append-only ledger and any change must create a new release.
+
+----
+
+# Highlights
+
+# [Processes - share nothing](https://12factor.net/processes)
+Any data that needs to persist must be stored in a stateful backing service, typically a database. No Sticky sessions.
+# [Concurrency](https://12factor.net/concurrency)
+Scale out via the process model.
+# [Disposability](https://12factor.net/disposability)
+Maximize robustness with fast startup and graceful shutdown.
+# [Logs](https://12factor.net/logs)
+Logs should be treated as event streams, that is, logs are a sequence
+of events emitted from an application in time-ordered sequence
+
+---
+
+# Beyond 12 factors
+
+New things in building Cloud Native
+
+# API First
+designing your API first, you are able to facilitate discussion with your stakeholders
+# Measure everything
+Think of pushing applications to the cloud as launching a scientific instrument into space. You need to know what is going on at a distance.
+# Authenticate and authorize
+Security should never be an afterthought.
+
+
+[Reference - Beyond the 12 factors ](https://www.cdta.org/sites/default/files/awards/beyond_the_12-factor_app_pivotal.pdf)
+
+---
+
+# Docker compose
+
+- Docker compse file
+- run_compse
+- compose.env
+
+# Presenter notes
